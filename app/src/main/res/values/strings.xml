@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pigpen</string>
+    <string name="title_home">首页</string>
+    <string name="title_attention">关注</string>
+    <string name="title_chat">聊天</string>
+    <string name="title_notifications">我的</string>
+    <string name="hello">Hello</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
