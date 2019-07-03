@@ -22,8 +22,6 @@ import com.doaing.pigpen.R;
 import static android.support.v4.view.WindowCompat.FEATURE_ACTION_BAR;
 
 public class Main2Activity extends AppCompatActivity {
-    private float lastPointX;
-    private float lastPointY;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
