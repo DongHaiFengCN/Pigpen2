@@ -3,6 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
 
@@ -10,7 +11,8 @@
         android:layout_marginTop="@dimen/dp_40"
         android:layout_width="match_parent"
         android:gravity="center"
-        android:layout_height="@dimen/dp_48">
+        android:layout_height="@dimen/dp_48"
+        tools:ignore="UseCompoundDrawables">
         <TextView
             android:id="@+id/search_tv"
             android:layout_width="0dp"
@@ -19,17 +21,18 @@
             android:layout_marginStart="@dimen/fab_margin"
             android:layout_marginEnd="@dimen/dp_8"
             android:drawableStart="@drawable/ic_search_24dp"
-            android:text="  喔喔喔喔喔喔喔喔"
             android:gravity="center_vertical"
-            android:paddingLeft="@dimen/dp_8"
+            android:paddingStart="@dimen/dp_8"
             android:textColor="@color/colorTitle"
             android:layout_weight="1"
-            />
+            tools:ignore="RtlSymmetry" />
         <ImageView
+            android:id="@+id/publish_im"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_camera_24dp"
-            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
+            tools:ignore="ContentDescription"
             />
     </LinearLayout>
 

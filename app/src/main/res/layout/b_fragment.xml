@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_40"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="B" />
+        android:gravity="center"
+        android:layout_height="@dimen/dp_48"
+        tools:ignore="UseCompoundDrawables">
+        <TextView
+            android:id="@+id/search_tv"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_32"
+            android:background="@drawable/shape_rectangle"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:drawableStart="@drawable/ic_search_24dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_8"
+            android:textColor="@color/colorTitle"
+            android:layout_weight="1"
+            />
+        <ImageView
+            android:id="@+id/publish_im"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_camera_24dp"
+            android:layout_marginEnd="@dimen/fab_margin"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
 
-</FrameLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/home_fragment_swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/home_fragment_rcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

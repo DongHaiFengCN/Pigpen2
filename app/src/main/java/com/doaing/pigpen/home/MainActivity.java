@@ -14,9 +14,9 @@ import com.doaing.common.util.Utils;
 import com.doaing.pigpen.R;
 
 public class MainActivity extends AppCompatActivity {
-    private BlankViewModel mViewModel;
+
     private FragmentManager fragmentManager;
-    private AFragment aFragment;
+    private HomeFragment homeFragment;
     private BFragment bFragment;
     private CFragment cFragment;
     private DFragment dFragment;
@@ -47,14 +47,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Utils.set360dpDensity(this);
         Utils.setAndroidNativeLightStatusBar(this, true);
-        mViewModel = ViewModelProviders.of(MainActivity.this)
-                .get(BlankViewModel.class);
+        setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
         showFragment(0);
     }
 
@@ -63,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
         hideFragment(ft);
         switch (index) {
             case 0:
-                if (aFragment == null) {
-                    aFragment = new AFragment();
-                    ft.add(R.id.message, aFragment);
+                if (homeFragment == null) {
+                    homeFragment = new HomeFragment();
+                    ft.add(R.id.message, homeFragment);
                 }
-                ft.show(aFragment);
+                ft.show(homeFragment);
                 break;
             case 1:
                 if (bFragment == null) {
@@ -99,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void hideFragment(FragmentTransaction ft) {
         //如果不为空，就先隐藏起来
-        if (aFragment != null) {
-            ft.hide(aFragment);
+        if (homeFragment != null) {
+            ft.hide(homeFragment);
         }
         if (bFragment != null) {
             ft.hide(bFragment);
